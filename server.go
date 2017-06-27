@@ -29,8 +29,6 @@ import (
 	"golang.org/x/tools/godoc/analysis"
 	"golang.org/x/tools/godoc/util"
 	"golang.org/x/tools/godoc/vfs"
-
-	logrus "github.com/sirupsen/logrus"
 )
 
 // handlerServer is a migration from an old godoc http Handler type.
