@@ -29,6 +29,8 @@ import (
 	"golang.org/x/tools/godoc/analysis"
 	"golang.org/x/tools/godoc/util"
 	"golang.org/x/tools/godoc/vfs"
+
+	logrus "github.com/sirupsen/logrus"
 )
 
 // handlerServer is a migration from an old godoc http Handler type.
@@ -185,7 +187,12 @@ func (h *handlerServer) GetPageInfo(abspath, relpath string, mode PageInfoMode, 
 			}
 			info.PAst = files
 		}
-		info.IsMain = pkgname == "main"
+		// info.IsMain = pkgname == "main"
+		if (pkgname == "main") {
+			logrus.Warn("Doin' hacks - "+
+				"Package 'main' not supported in official version")
+		}
+		info.IsMain = false // Shh, don't tell those other lines of code
 	}
 
 	// get directory information, if any
