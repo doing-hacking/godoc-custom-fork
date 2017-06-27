@@ -8,7 +8,7 @@ unavailable in the upstream version of godoc:
 ## Install
 
 The easiest way to install this godoc fork into your actual workflow
-is to delete the $GOPATH/src/golang.org/x/tools/godoc folder and replace
+is to delete the `$GOPATH/src/golang.org/x/tools/godoc` folder and replace
 it with the contents of this folder. Keep in mind, this will make your Go
 repository inconsistent. (as godoc is packaged with the official go repo)
 
@@ -21,6 +21,14 @@ mkdir $GOPATH/src/golang.org/x/tools/godoc/
 cp -a . $GOPATH/src/golang.org/x/tools/godoc/
 go install golang.org/x/tools/cmd/godoc
 ```
+
+## Future Hacks
+
+There are some things I want to add to this repository if I find the time.
+
+- Create a package for formatting documentation with a small subset of markdown
+  syntax. This package will probably be called "slippery-slope markdown"
+- Draw special attention to `//TODO: ` comments
 
 # godoc
 
