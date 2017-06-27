@@ -1,3 +1,26 @@
+# godoc-custom-fork
+
+This repository contains the following features that are currently
+unavailable in the upstream version of godoc:
+
+- Viewing 'main' packages in godoc
+
+## Install
+
+The easiest way to install this godoc fork into your actual workflow
+is to delete the $GOPATH/bin/godoc folder and replace it with the
+contents of this folder. Keep in mind with will make your Go repository
+inconsistent. (as godoc is packaged with the official go repo)
+
+```
+mkdir -p ~/repos && cd ~/repos
+git clone git@github.com:doing-hacking/godoc-custom-fork.git
+cd godoc-custom-fork
+rm -rf $GOPATH/src/golang.org/x/tools/godoc/
+mkdir $GOPATH/src/golang.org/x/tools/godoc/
+cp -a . $GOPATH/src/golang.org/x/tools/godoc/
+```
+
 # godoc
 
 This directory contains most of the code for running a godoc server. The
