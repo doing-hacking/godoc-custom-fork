@@ -19,6 +19,7 @@ cd godoc-custom-fork
 rm -rf $GOPATH/src/golang.org/x/tools/godoc/
 mkdir $GOPATH/src/golang.org/x/tools/godoc/
 cp -a . $GOPATH/src/golang.org/x/tools/godoc/
+go install golang.org/x/tools/cmd/godoc
 ```
 
 # godoc
