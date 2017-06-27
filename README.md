@@ -8,9 +8,9 @@ unavailable in the upstream version of godoc:
 ## Install
 
 The easiest way to install this godoc fork into your actual workflow
-is to delete the $GOPATH/bin/godoc folder and replace it with the
-contents of this folder. Keep in mind with will make your Go repository
-inconsistent. (as godoc is packaged with the official go repo)
+is to delete the $GOPATH/src/golang.org/x/tools/godoc folder and replace
+it with the contents of this folder. Keep in mind, this will make your Go
+repository inconsistent. (as godoc is packaged with the official go repo)
 
 ```
 mkdir -p ~/repos && cd ~/repos
