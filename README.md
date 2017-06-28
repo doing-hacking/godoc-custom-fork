@@ -4,6 +4,9 @@ This repository contains the following features that are currently
 unavailable in the upstream version of godoc:
 
 - Viewing 'main' packages in godoc
+- Parsing comments using [Slippery-Slope Markdown](https://github.com/doing-hacking/slippery-slope-markdown)
+  - Supports bold text using `**bold**` syntax
+  - Supports unordered lists using `-` syntax
 
 ## Install
 
