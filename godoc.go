@@ -29,6 +29,8 @@ import (
 	"time"
 	"unicode"
 	"unicode/utf8"
+
+	"github.com/doing-hacking/slippery-slope-markdown"
 )
 
 // Fake relative package path for built-ins. Documentation for all globals
@@ -339,10 +341,12 @@ func isDigit(ch rune) bool {
 
 func comment_htmlFunc(comment string) string {
 	var buf bytes.Buffer
+	var buf2 bytes.Buffer
 	// TODO(gri) Provide list of words (e.g. function parameters)
 	//           to be emphasized by ToHTML.
 	doc.ToHTML(&buf, comment, nil) // does html-escaping
-	return buf.String()
+	slipperyslopemd.ParseNoEscapeFromBytes(&buf2, buf.Bytes())
+	return buf2.String()
 }
 
 // punchCardWidth is the number of columns of fixed-width
