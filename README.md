@@ -16,6 +16,8 @@ it with the contents of this folder. Keep in mind, this will make your Go
 repository inconsistent. (as godoc is packaged with the official go repo)
 
 ```
+go get github.com/doing-hacking/slippery-slope-markdown
+
 mkdir -p ~/repos && cd ~/repos
 git clone git@github.com:doing-hacking/godoc-custom-fork.git
 cd godoc-custom-fork
@@ -25,13 +27,20 @@ cp -a . $GOPATH/src/golang.org/x/tools/godoc/
 go install golang.org/x/tools/cmd/godoc
 ```
 
+If you've installed godoc into your go workspace, you may need to run godoc
+like this for changes to take effect:
+```
+$GOPATH/bin/godoc -http=:8080
+```
+
 ## Future Hacks
 
 There are some things I want to add to this repository if I find the time.
 
-- Create a package for formatting documentation with a small subset of markdown
-  syntax. This package will probably be called "slippery-slope markdown"
 - Draw special attention to `//TODO: ` comments
+- Change all internal package references so that this package can be used
+  alongside the existing godoc package (rather then replacing it with the
+  super-hacky shell code above)
 
 # godoc
 
